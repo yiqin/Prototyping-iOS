@@ -20,6 +20,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // Kimono
     NSURL *url = [NSURL URLWithString:@"https://www.kimonolabs.com/api/afhn5y42?apikey=8541e9ff8ff5291b4d84b9f75550c9b8"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
