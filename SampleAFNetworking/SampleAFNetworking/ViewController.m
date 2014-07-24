@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "AFHTTPRequestOperation.h"
-
+#import "AFHTTPRequestOperationManager.h"
 
 @interface ViewController ()
 
@@ -82,11 +82,27 @@
     }];
     */
     
+    // Use AFNetworking.
+    /*
     // It seems good now.
     NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
     // operation 2 takes a longer time.
     [myQueue addOperation:operation2];
     [myQueue addOperation:operation1];
+    */
+    
+    
+    AFHTTPRequestOperationManager *myOperationManager = [[AFHTTPRequestOperationManager alloc] init];
+    
+    myOperationManager.operationQueue.maxConcurrentOperationCount = 1;
+    // It makes sense now.
+    // Set maxConcurrentOperationCount to 1
+    // operation2 is finished first
+    // Set maxConcurrentOperationCount to 2
+    // operation1 is finished first, since operation2 and operation1 are scheduled at the same time.
+    
+    [myOperationManager.operationQueue addOperation:operation2];
+    [myOperationManager.operationQueue addOperation:operation1];
     
     
     NSLog(@"hello world");
