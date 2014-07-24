@@ -65,6 +65,19 @@
     
     [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
     
+    // It didn't work.
+    /*
+    NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
+    [myQueue addOperations:operations waitUntilFinished:NO];
+    [myQueue addOperationWithBlock:^{
+        
+        // Background work
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            // Main thread work (UI usually)
+        }];
+    }];
+    */
     
     NSLog(@"hello world");
 }
