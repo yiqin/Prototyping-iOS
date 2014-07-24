@@ -50,12 +50,11 @@
     }];
     
     
+    // Follow the order in the mutableOperations
     NSMutableArray *mutableOperations = [NSMutableArray array];
-    
     [mutableOperations addObject:operation2];
     [mutableOperations addObject:operation1];
 
-    // Follow the order in the mutableOperations
     NSArray *operations = [AFURLConnectionOperation batchOfRequestOperations:mutableOperations progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
         
         NSLog(@"%lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
@@ -64,12 +63,10 @@
         NSLog(@"All operations in batch complete");
     }];
     
-    
     [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
     
+    
     NSLog(@"hello world");
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
