@@ -31,6 +31,7 @@
     [operation1 setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Blue Apron - JSON: %@", [responseObject objectForKey:@"results"]);
         
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // Handle error
     }];
@@ -54,7 +55,9 @@
     NSMutableArray *mutableOperations = [NSMutableArray array];
     [mutableOperations addObject:operation2];
     [mutableOperations addObject:operation1];
-
+    
+    // Something wrong here.
+    /*
     NSArray *operations = [AFURLConnectionOperation batchOfRequestOperations:mutableOperations progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
         
         NSLog(@"%lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
@@ -62,10 +65,10 @@
     } completionBlock:^(NSArray *operations) {
         NSLog(@"All operations in batch complete");
     }];
+    */
     
-    [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
+    // [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
     
-    // It didn't work.
     /*
     NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
     [myQueue addOperations:operations waitUntilFinished:NO];
@@ -78,6 +81,13 @@
         }];
     }];
     */
+    
+    // It seems good now.
+    NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
+    // operation 2 takes a longer time.
+    [myQueue addOperation:operation2];
+    [myQueue addOperation:operation1];
+    
     
     NSLog(@"hello world");
 }

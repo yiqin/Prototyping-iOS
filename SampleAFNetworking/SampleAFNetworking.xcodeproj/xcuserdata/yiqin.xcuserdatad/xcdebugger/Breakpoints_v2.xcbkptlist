@@ -25,7 +25,7 @@
                   symbolName = "__29-[ViewController viewDidLoad]_block_invoke"
                   moduleName = "SampleAFNetworking"
                   urlString = "file:///Users/yiqin/Desktop/Prototyping/SampleAFNetworking/SampleAFNetworking/ViewController.m"
-                  timestampString = "427868648.276085"
+                  timestampString = "427905200.848572"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -39,11 +39,57 @@
                   symbolName = "__29-[ViewController viewDidLoad]_block_invoke_2"
                   moduleName = "SampleAFNetworking"
                   urlString = "file:///Users/yiqin/Desktop/Prototyping/SampleAFNetworking/SampleAFNetworking/ViewController.m"
-                  timestampString = "427868648.276334"
+                  timestampString = "427905200.848892"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SampleAFNetworking/ViewController.m"
+            timestampString = "427904689.495063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[ViewController viewDidLoad]_block_invoke_3"
+                  moduleName = "SampleAFNetworking"
+                  urlString = "file:///Users/yiqin/Desktop/Prototyping/SampleAFNetworking/SampleAFNetworking/ViewController.m"
+                  timestampString = "427905200.892504"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "142">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[ViewController viewDidLoad]_block_invoke_4"
+                  moduleName = "SampleAFNetworking"
+                  urlString = "file:///Users/yiqin/Desktop/Prototyping/SampleAFNetworking/SampleAFNetworking/ViewController.m"
+                  timestampString = "427905200.892775"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
                   offsetFromSymbolStart = "56">
                </Location>
             </Locations>
