@@ -21,6 +21,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // AFNetWorking
+    // https://github.com/AFNetworking/AFNetworking/wiki/AFNetworking-2.0-Migration-Guide#afhttprequestoperation-example
+    // AFHTTPRequestOperation  - GET Method
+    // Other methods - "GET, POST, PUT, DELETE", use AFHTTPRequestOperationManager
+    
+    
     // Kimono
     // 1 - Blue Apron
     NSURL *url1 = [NSURL URLWithString:@"https://www.kimonolabs.com/api/7uqn1y8g?apikey=8541e9ff8ff5291b4d84b9f75550c9b8"];
