@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D790524197C893200D27EEA"
-               BuildableName = "SampleAFNetworking.app"
+               BuildableName = "AFNetworkingExample.app"
                BlueprintName = "AFNetworkingExample"
                ReferencedContainer = "container:AFNetworkingExample.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D790545197C893200D27EEA"
-               BuildableName = "SampleAFNetworkingTests.xctest"
+               BuildableName = "AFNetworkingExampleTests.xctest"
                BlueprintName = "AFNetworkingExampleTests"
                ReferencedContainer = "container:AFNetworkingExample.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D790524197C893200D27EEA"
-            BuildableName = "SampleAFNetworking.app"
+            BuildableName = "AFNetworkingExample.app"
             BlueprintName = "AFNetworkingExample"
             ReferencedContainer = "container:AFNetworkingExample.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D790524197C893200D27EEA"
-            BuildableName = "SampleAFNetworking.app"
+            BuildableName = "AFNetworkingExample.app"
             BlueprintName = "AFNetworkingExample"
             ReferencedContainer = "container:AFNetworkingExample.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D790524197C893200D27EEA"
-            BuildableName = "SampleAFNetworking.app"
+            BuildableName = "AFNetworkingExample.app"
             BlueprintName = "AFNetworkingExample"
             ReferencedContainer = "container:AFNetworkingExample.xcodeproj">
          </BuildableReference>
