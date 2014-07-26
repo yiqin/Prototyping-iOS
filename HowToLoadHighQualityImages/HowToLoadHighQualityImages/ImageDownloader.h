@@ -19,6 +19,10 @@
 @property (nonatomic, assign) id <ImageDownloaderDelegate> delegate;
 
 // 3: Declare indexPathInTableView for convenience so that once the operation is finished, the caller has a reference to where this operation belongs to.
+
+//
+// readonly, readwrite
+//
 @property (nonatomic, readonly, strong) NSIndexPath *indexPathInTableView;
 @property (nonatomic, readonly, strong) PhotoRecord *photoRecord;
 

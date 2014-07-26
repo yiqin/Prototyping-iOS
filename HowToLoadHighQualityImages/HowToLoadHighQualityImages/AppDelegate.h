@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListTableViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

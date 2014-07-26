@@ -13,6 +13,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    /*
+     ListViewController is a subclass of UITableViewController.
+     We will display images in ListViewController.
+     Here, we wrap our ListViewController in a UINavigationController, and set it as the root view controller.
+     */
+    
+    ListTableViewController *listViewController = [[ListTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+    
+    self.window.rootViewController = navController;
+    
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
