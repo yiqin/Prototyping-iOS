@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D790524197C893200D27EEA"
-               BuildableName = "SampleAFNetworking.app"
-               BlueprintName = "SampleAFNetworking"
-               ReferencedContainer = "container:SampleAFNetworking.xcodeproj">
+               BlueprintIdentifier = "8DDC603B198352140095EDD1"
+               BuildableName = "HowToLoadHighQualityImages.app"
+               BlueprintName = "HowToLoadHighQualityImages"
+               ReferencedContainer = "container:HowToLoadHighQualityImages.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D790545197C893200D27EEA"
-               BuildableName = "SampleAFNetworkingTests.xctest"
-               BlueprintName = "SampleAFNetworkingTests"
-               ReferencedContainer = "container:SampleAFNetworking.xcodeproj">
+               BlueprintIdentifier = "8DDC605C198352140095EDD1"
+               BuildableName = "HowToLoadHighQualityImagesTests.xctest"
+               BlueprintName = "HowToLoadHighQualityImagesTests"
+               ReferencedContainer = "container:HowToLoadHighQualityImages.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D790524197C893200D27EEA"
-            BuildableName = "SampleAFNetworking.app"
-            BlueprintName = "SampleAFNetworking"
-            ReferencedContainer = "container:SampleAFNetworking.xcodeproj">
+            BlueprintIdentifier = "8DDC603B198352140095EDD1"
+            BuildableName = "HowToLoadHighQualityImages.app"
+            BlueprintName = "HowToLoadHighQualityImages"
+            ReferencedContainer = "container:HowToLoadHighQualityImages.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D790524197C893200D27EEA"
-            BuildableName = "SampleAFNetworking.app"
-            BlueprintName = "SampleAFNetworking"
-            ReferencedContainer = "container:SampleAFNetworking.xcodeproj">
+            BlueprintIdentifier = "8DDC603B198352140095EDD1"
+            BuildableName = "HowToLoadHighQualityImages.app"
+            BlueprintName = "HowToLoadHighQualityImages"
+            ReferencedContainer = "container:HowToLoadHighQualityImages.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D790524197C893200D27EEA"
-            BuildableName = "SampleAFNetworking.app"
-            BlueprintName = "SampleAFNetworking"
-            ReferencedContainer = "container:SampleAFNetworking.xcodeproj">
+            BlueprintIdentifier = "8DDC603B198352140095EDD1"
+            BuildableName = "HowToLoadHighQualityImages.app"
+            BlueprintName = "HowToLoadHighQualityImages"
+            ReferencedContainer = "container:HowToLoadHighQualityImages.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

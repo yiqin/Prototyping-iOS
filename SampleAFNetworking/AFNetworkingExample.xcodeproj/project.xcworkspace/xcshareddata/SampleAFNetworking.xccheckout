@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8C2B289F-01BD-4353-8D2C-E3D11AA7BD31</string>
+	<string>F8FF5DB3-1B5C-4B63-9568-03E75C0E5032</string>
 	<key>IDESourceControlProjectName</key>
 	<string>SampleAFNetworking</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C68C8219-5C3A-49BE-9607-9D5FB5DFD9FA</key>
+		<key>8FED6652-437B-4189-A0DB-5853F2D5ABED</key>
 		<string>https://github.com/yiqin/Prototyping.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SampleAFNetworking/SampleAFNetworking.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C68C8219-5C3A-49BE-9607-9D5FB5DFD9FA</key>
+		<key>8FED6652-437B-4189-A0DB-5853F2D5ABED</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C68C8219-5C3A-49BE-9607-9D5FB5DFD9FA</string>
+	<string>8FED6652-437B-4189-A0DB-5853F2D5ABED</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C68C8219-5C3A-49BE-9607-9D5FB5DFD9FA</string>
+			<string>8FED6652-437B-4189-A0DB-5853F2D5ABED</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Prototyping</string>
 		</dict>
