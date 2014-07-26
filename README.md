@@ -4,7 +4,7 @@ Prototyping
 My prototyping project comes here.
 
 
-SampleAFNetworking
+AFNetworkingExample
 =========
 It's primary for API testing. It's used to test Kimono now.
 
