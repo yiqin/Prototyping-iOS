@@ -10,9 +10,9 @@
 
 @implementation PhotoRecord
 
-@synthesize name = _name;
+@synthesize name = something1;
 @synthesize image = _image;
-@synthesize URL = _URL;
+@synthesize URL = something2;
 @synthesize hasImage = _hasImage;
 @synthesize filtered = _filtered;
 @synthesize failed = _failed;
