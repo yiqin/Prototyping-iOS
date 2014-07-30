@@ -100,10 +100,10 @@
 {
     CGRect tempFrame = self.frame;
     if (self.textAlignment == NSTextAlignmentLeft || self.textAlignment == NSTextAlignmentCenter) {
-        self.frame = CGRectMake(CGRectGetMinX(referenceFrame), CGRectGetMaxY(referenceFrame), CGRectGetWidth(tempFrame), CGRectGetHeight(tempFrame));
+        self.frame = CGRectMake(CGRectGetMinX(referenceFrame), CGRectGetMaxY(referenceFrame)+5, CGRectGetWidth(tempFrame), CGRectGetHeight(tempFrame));
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
-        self.frame = CGRectMake(CGRectGetMinX(referenceFrame)+CGRectGetWidth(referenceFrame)-CGRectGetWidth(tempFrame), CGRectGetMaxY(referenceFrame), CGRectGetWidth(tempFrame), CGRectGetHeight(tempFrame));
+        self.frame = CGRectMake(CGRectGetMinX(referenceFrame)+CGRectGetWidth(referenceFrame)-CGRectGetWidth(tempFrame), CGRectGetMaxY(referenceFrame)+5, CGRectGetWidth(tempFrame), CGRectGetHeight(tempFrame));
     }
 }
 

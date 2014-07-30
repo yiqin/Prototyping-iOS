@@ -9,16 +9,20 @@
 #import "ViewController.h"
 #import "AFHTTPRequestOperation.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "YQLabel.h"
+
+@class YQLabelWithFixedWidth;
 
 @interface ViewController ()
 
 @property (strong, nonatomic) NSDictionary *kimonoResults;
-@property (strong, nonatomic) NSDictionary *kimonoResultsHeader;
-@property (strong, nonatomic) NSDictionary *kimonoResultsBody;
+@property (strong, nonatomic) NSArray *kimonoResultsHeader;
+@property (strong, nonatomic) NSArray *kimonoResultsBody;
 
-@property (strong, nonatomic) UILabel *title;
-@property (strong, nonatomic) UILabel *author;
-@property (strong, nonatomic) UILabel *date;
+@property (strong, nonatomic) YQLabelWithFixedWidth *articleTitle;
+@property (strong, nonatomic) YQLabelWithFixedWidth *articleAuthor;
+@property (strong, nonatomic) YQLabelWithFixedWidth *publishDate;
+
 
 @end
 
@@ -57,13 +61,39 @@
     self.kimonoResultsHeader = [self.kimonoResults objectForKey:@"Header"];
     self.kimonoResultsBody = [self.kimonoResults objectForKey:@"Body"];
     
+    
     [self displayHeader];
     [self displayBody];
 }
 
 - (void)displayHeader
 {
+    CGRect tempFrame = CGRectMake(20.0, 72.0, CGRectGetWidth(self.view.frame), 1024.0);
+    NSDictionary *tempHead = [self.kimonoResultsHeader objectAtIndex:0];
     
+    NSString *tempTitle = [tempHead objectForKey:@"Title"];
+    self.articleTitle = [[YQLabelWithFixedWidth alloc] initWithFrame:tempFrame
+                                                                font:[UIFont fontWithName:@"Georgia" size:20]
+                                                                text:tempTitle
+                                                       textAlignment:NSTextAlignmentLeft];
+    
+    
+    NSString *tempAuthor = [[tempHead objectForKey:@"Author"] objectForKey:@"text"];
+    self.articleAuthor = [[YQLabelWithFixedWidth alloc] initWithText:tempAuthor
+                                                       textAlignment:NSTextAlignmentLeft
+                                                            fontSize:17
+                                                 labelEstimatedWidth:CGRectGetWidth(self.view.frame) afterUILabel:self.articleTitle];
+    
+    NSString *tempDate = [tempHead objectForKey:@"Date"];
+    self.publishDate = [[YQLabelWithFixedWidth alloc] initWithText:tempDate
+                                                     textAlignment:NSTextAlignmentLeft
+                                                          fontSize:17
+                                               labelEstimatedWidth:CGRectGetWidth(self.view.frame)
+                                                      afterUILabel:self.articleAuthor];
+    
+    [self.view addSubview:self.articleTitle];
+    [self.view addSubview:self.articleAuthor];
+    [self.view addSubview:self.publishDate];
 }
 
 - (void)displayBody
