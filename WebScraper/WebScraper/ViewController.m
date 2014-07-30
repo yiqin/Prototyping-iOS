@@ -13,6 +13,12 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) NSDictionary *kimonoResults;
+@property (strong, nonatomic) NSDictionary *kimonoResultsHeader;
+@property (strong, nonatomic) NSDictionary *kimonoResultsBody;
+
+@property (strong, nonatomic) UILabel *title;
+@property (strong, nonatomic) UILabel *author;
+@property (strong, nonatomic) UILabel *date;
 
 @end
 
@@ -34,16 +40,35 @@
     
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Response JSON: %@", [responseObject objectForKey:@"results"]);
         self.kimonoResults = [responseObject objectForKey:@"results"];
+        [self displayDataFromKimono];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        // Handle error
+    
     }];
     
     AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManager alloc] init];
     operationManager.operationQueue.maxConcurrentOperationCount = 5;
     [operationManager.operationQueue addOperation:operation];
+}
+
+- (void)displayDataFromKimono
+{
+    self.kimonoResultsHeader = [self.kimonoResults objectForKey:@"Header"];
+    self.kimonoResultsBody = [self.kimonoResults objectForKey:@"Body"];
+    
+    [self displayHeader];
+    [self displayBody];
+}
+
+- (void)displayHeader
+{
+    
+}
+
+- (void)displayBody
+{
+    
 }
 
 - (void)didReceiveMemoryWarning

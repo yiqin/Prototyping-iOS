@@ -21,6 +21,7 @@
 		8D8612D8198977FB00EC2BC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8612BA198977FB00EC2BC1 /* UIKit.framework */; };
 		8D8612E0198977FB00EC2BC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D8612DE198977FB00EC2BC1 /* InfoPlist.strings */; };
 		8D8612E2198977FB00EC2BC1 /* WebScraperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8612E1198977FB00EC2BC1 /* WebScraperTests.m */; };
+		8D8612ED198982F800EC2BC1 /* YQLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8612EC198982F800EC2BC1 /* YQLabel.m */; };
 		B164A7FC94BD42AAAD3D65CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAEA216DF3E45EABDBC428D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		8D8612DD198977FB00EC2BC1 /* WebScraperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WebScraperTests-Info.plist"; sourceTree = "<group>"; };
 		8D8612DF198977FB00EC2BC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D8612E1198977FB00EC2BC1 /* WebScraperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebScraperTests.m; sourceTree = "<group>"; };
+		8D8612EB198982F800EC2BC1 /* YQLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLabel.h; sourceTree = "<group>"; };
+		8D8612EC198982F800EC2BC1 /* YQLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				8D8612C8198977FB00EC2BC1 /* Main.storyboard */,
 				8D8612CB198977FB00EC2BC1 /* ViewController.h */,
 				8D8612CC198977FB00EC2BC1 /* ViewController.m */,
+				8D8612EB198982F800EC2BC1 /* YQLabel.h */,
+				8D8612EC198982F800EC2BC1 /* YQLabel.m */,
 				8D8612CE198977FB00EC2BC1 /* Images.xcassets */,
 				8D8612BD198977FB00EC2BC1 /* Supporting Files */,
 			);
@@ -292,6 +297,7 @@
 			files = (
 				8D8612CD198977FB00EC2BC1 /* ViewController.m in Sources */,
 				8D8612C7198977FB00EC2BC1 /* AppDelegate.m in Sources */,
+				8D8612ED198982F800EC2BC1 /* YQLabel.m in Sources */,
 				8D8612C3198977FB00EC2BC1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
