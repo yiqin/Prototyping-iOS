@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9FAF4612-2F89-480E-9540-91460D0A3BB7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WebScraper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>38B30962-F91A-4FD4-A7FA-16B9F7CFC875</key>
+		<string>https://github.com/yiqin/Prototyping.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WebScraper/WebScraper.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>38B30962-F91A-4FD4-A7FA-16B9F7CFC875</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yiqin/Prototyping.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>38B30962-F91A-4FD4-A7FA-16B9F7CFC875</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38B30962-F91A-4FD4-A7FA-16B9F7CFC875</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Prototyping</string>
+		</dict>
+	</array>
+</dict>
+</plist>
