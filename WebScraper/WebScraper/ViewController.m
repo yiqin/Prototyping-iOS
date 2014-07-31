@@ -68,7 +68,8 @@
 
 - (void)displayHeader
 {
-    CGRect tempFrame = CGRectMake(20.0, 72.0, CGRectGetWidth(self.view.frame), 1024.0);
+    float tempOriginY = 72.0;
+    CGRect tempFrame = CGRectMake(20.0, tempOriginY, CGRectGetWidth(self.view.frame)-40.0, 1024.0);
     NSDictionary *tempHead = [self.kimonoResultsHeader objectAtIndex:0];
     
     NSString *tempTitle = [tempHead objectForKey:@"Title"];
