@@ -45,7 +45,7 @@
 - (id)initWithText:(NSString *)text textAlignment:(NSTextAlignment)textAlignment fontSize:(float)fontSize labelEstimatedWidth:(float)labelEstimatedWidth afterUILabel:(UILabel *)label
 {
     CGRect tempFrame = CGRectMake(0, 0, labelEstimatedWidth, 1024.0);
-    UIFont *tempFont = [UIFont fontWithName:@"Georgia" size:fontSize];
+    UIFont *tempFont = [UIFont fontWithName:@"Cochin" size:fontSize];
     self = [self initWithFrame:tempFrame font:tempFont text:text textAlignment:textAlignment];
     if (self) {
         [self afterUILabel:label];
@@ -56,7 +56,7 @@
 - (id)initWithText:(NSString *)text textAlignment:(NSTextAlignment)textAlignment fontSize:(float)fontSize labelEstimatedWidth:(float)labelEstimatedWidth afterFrame:(CGRect)referenceFrame
 {
     CGRect tempFrame = CGRectMake(0, 0, labelEstimatedWidth, 1024.0);
-    UIFont *tempFont = [UIFont fontWithName:@"Georgia" size:fontSize];
+    UIFont *tempFont = [UIFont fontWithName:@"Cochin" size:fontSize];
     self = [self initWithFrame:tempFrame font:tempFont text:text textAlignment:textAlignment];
     if (self) {
         [self afterFrame:referenceFrame];

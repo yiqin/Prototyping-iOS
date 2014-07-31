@@ -23,6 +23,8 @@
 @property (strong, nonatomic) YQLabelWithFixedWidth *articleAuthor;
 @property (strong, nonatomic) YQLabelWithFixedWidth *publishDate;
 
+@property (strong, nonatomic) YQLabelWithFixedWidth *currentBodyLabel;
+@property (strong, nonatomic) YQLabelWithFixedWidth *lastBodyLabel;
 
 @end
 
@@ -37,6 +39,11 @@
 
 - (void)loadDataFromKimono
 {
+     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(160, 240);
+    [spinner startAnimating];
+    [self.view addSubview:spinner];
+    
     // Only one page and one link
     NSURL *url = [NSURL URLWithString:@"https://www.kimonolabs.com/api/drvp3au6?apikey=8541e9ff8ff5291b4d84b9f75550c9b8"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -46,6 +53,7 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.kimonoResults = [responseObject objectForKey:@"results"];
         [self displayDataFromKimono];
+        [spinner stopAnimating];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     
@@ -61,8 +69,9 @@
     self.kimonoResultsHeader = [self.kimonoResults objectForKey:@"Header"];
     self.kimonoResultsBody = [self.kimonoResults objectForKey:@"Body"];
     
-    
     [self displayHeader];
+    
+    self.lastBodyLabel = self.publishDate;
     [self displayBody];
 }
 
@@ -99,7 +108,28 @@
 
 - (void)displayBody
 {
-    
+    for (NSDictionary *tempBody in self.kimonoResultsBody) {
+        NSDictionary *temp = [tempBody objectForKey:@"Article"];
+        NSString *bodyText = [temp objectForKey:@"text"];
+        
+        if ([bodyText length] > 0) {
+            self.currentBodyLabel = [[YQLabelWithFixedWidth alloc] initWithText:bodyText
+                                                                  textAlignment:NSTextAlignmentLeft
+                                                                       fontSize:18
+                                                            labelEstimatedWidth:CGRectGetWidth(self.view.frame)-40
+                                                                     afterFrame:self.lastBodyLabel.frame];
+        }
+        else {
+            self.currentBodyLabel = [[YQLabelWithFixedWidth alloc] initWithText:@"This is empty"
+                                                                  textAlignment:NSTextAlignmentLeft
+                                                                       fontSize:25
+                                                            labelEstimatedWidth:CGRectGetWidth(self.view.frame)-40
+                                                                   afterUILabel:self.lastBodyLabel];
+        }
+        
+        self.lastBodyLabel = self.currentBodyLabel;
+        [self.view addSubview:self.currentBodyLabel];
+    }
 }
 
 - (void)didReceiveMemoryWarning
