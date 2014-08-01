@@ -15,4 +15,10 @@ Inspired by the tutorial on RayWenderlich
 http://www.raywenderlich.com/19788/how-to-use-nsoperations-and-nsoperationqueues
 
 
+Web Scraper
+===========
+Based on the support from Kimono. It must be supported by the backend, rather than directly from Kimono to iOS.
+
+
+
 Let me know if you have any questions. Thanks
