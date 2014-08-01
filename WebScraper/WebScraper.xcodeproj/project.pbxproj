@@ -19,6 +19,9 @@
 		8D52BCBE198B307D00A91B4F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D52BCBD198B307D00A91B4F /* CFNetwork.framework */; };
 		8D52BCC0198B308600A91B4F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D52BCBF198B308600A91B4F /* AudioToolbox.framework */; };
 		8D52BCC3198B31A400A91B4F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D52BCC2198B31A400A91B4F /* Social.framework */; };
+		8D52BCC5198B398F00A91B4F /* dish.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D52BCC4198B398F00A91B4F /* dish.json */; };
+		8D52BCCA198B3E2500A91B4F /* NSDictionary+DictionaryToJSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D52BCC7198B3E2500A91B4F /* NSDictionary+DictionaryToJSONString.m */; };
+		8D52BCCB198B3E2500A91B4F /* NSString+JSONStringToDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D52BCC9198B3E2500A91B4F /* NSString+JSONStringToDictionary.m */; };
 		8D8612B7198977FB00EC2BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8612B6198977FB00EC2BC1 /* Foundation.framework */; };
 		8D8612B9198977FB00EC2BC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8612B8198977FB00EC2BC1 /* CoreGraphics.framework */; };
 		8D8612BB198977FB00EC2BC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8612BA198977FB00EC2BC1 /* UIKit.framework */; };
@@ -65,6 +68,11 @@
 		8D52BCBD198B307D00A91B4F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8D52BCBF198B308600A91B4F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8D52BCC2198B31A400A91B4F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8D52BCC4198B398F00A91B4F /* dish.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dish.json; sourceTree = "<group>"; };
+		8D52BCC6198B3E2500A91B4F /* NSDictionary+DictionaryToJSONString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DictionaryToJSONString.h"; sourceTree = "<group>"; };
+		8D52BCC7198B3E2500A91B4F /* NSDictionary+DictionaryToJSONString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DictionaryToJSONString.m"; sourceTree = "<group>"; };
+		8D52BCC8198B3E2500A91B4F /* NSString+JSONStringToDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JSONStringToDictionary.h"; sourceTree = "<group>"; };
+		8D52BCC9198B3E2500A91B4F /* NSString+JSONStringToDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSONStringToDictionary.m"; sourceTree = "<group>"; };
 		8D8612B3198977FB00EC2BC1 /* WebScraper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebScraper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8612B6198977FB00EC2BC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8D8612B8198977FB00EC2BC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,8 +185,13 @@
 				8D8612C8198977FB00EC2BC1 /* Main.storyboard */,
 				8D52BCAA198B2FA000A91B4F /* IchibanViewController.h */,
 				8D52BCAB198B2FA000A91B4F /* IchibanViewController.m */,
+				8D52BCC4198B398F00A91B4F /* dish.json */,
 				8D8612CB198977FB00EC2BC1 /* ViewController.h */,
 				8D8612CC198977FB00EC2BC1 /* ViewController.m */,
+				8D52BCC6198B3E2500A91B4F /* NSDictionary+DictionaryToJSONString.h */,
+				8D52BCC7198B3E2500A91B4F /* NSDictionary+DictionaryToJSONString.m */,
+				8D52BCC8198B3E2500A91B4F /* NSString+JSONStringToDictionary.h */,
+				8D52BCC9198B3E2500A91B4F /* NSString+JSONStringToDictionary.m */,
 				8D8612EB198982F800EC2BC1 /* YQLabel.h */,
 				8D8612EC198982F800EC2BC1 /* YQLabel.m */,
 				8D8612CE198977FB00EC2BC1 /* Images.xcassets */,
@@ -297,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8612CF198977FB00EC2BC1 /* Images.xcassets in Resources */,
+				8D52BCC5198B398F00A91B4F /* dish.json in Resources */,
 				8D8612C1198977FB00EC2BC1 /* InfoPlist.strings in Resources */,
 				8DCA84F8198B2ADA00E91602 /* Cardo-Regular.ttf in Resources */,
 				8DCA84F6198B2A6100E91602 /* Cardo-Italic.ttf in Resources */,
@@ -354,8 +368,10 @@
 			files = (
 				8D8612CD198977FB00EC2BC1 /* ViewController.m in Sources */,
 				8D8612C7198977FB00EC2BC1 /* AppDelegate.m in Sources */,
+				8D52BCCA198B3E2500A91B4F /* NSDictionary+DictionaryToJSONString.m in Sources */,
 				8D52BCAC198B2FA000A91B4F /* IchibanViewController.m in Sources */,
 				8D8612ED198982F800EC2BC1 /* YQLabel.m in Sources */,
+				8D52BCCB198B3E2500A91B4F /* NSString+JSONStringToDictionary.m in Sources */,
 				8D8612C3198977FB00EC2BC1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

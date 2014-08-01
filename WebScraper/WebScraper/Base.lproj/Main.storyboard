@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iQw-j9-X0p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iQw-j9-X0p">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
         <!--View Controller - Title-->
@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="979" y="-63"/>
         </scene>
-        <!--Ichiban View Controller - Save to Parse Here-->
+        <!--Ichiban View Controller - Save to Parse here-->
         <scene sceneID="KB4-lB-6PV">
             <objects>
                 <viewController id="UzY-Jo-HIr" customClass="IchibanViewController" sceneMemberID="viewController">
@@ -40,9 +40,20 @@
                     <view key="view" contentMode="scaleToFill" id="sFk-bZ-Nc8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3A-Tl-cdR">
+                                <rect key="frame" x="137" y="141" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishedCategories:" destination="UzY-Jo-HIr" eventType="touchUpInside" id="74M-oC-RUb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Save to Parse Here" id="WWX-AZ-yDw"/>
+                    <navigationItem key="navigationItem" title="Save to Parse here" id="WWX-AZ-yDw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jfd-l9-7yV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
