@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Welcome-->
+        <!--View Controller - Title-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -17,11 +17,36 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="0d7-3A-ObQ"/>
+                    <navigationItem key="navigationItem" title="Title" id="6U9-bw-2eK">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="qPX-VB-kho">
+                            <connections>
+                                <segue destination="UzY-Jo-HIr" kind="push" id="vfr-gX-Rfm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="979" y="-63"/>
+        </scene>
+        <!--Ichiban View Controller - Save to Parse Here-->
+        <scene sceneID="KB4-lB-6PV">
+            <objects>
+                <viewController id="UzY-Jo-HIr" customClass="IchibanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YRk-zY-Vdu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qwt-H2-tBf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sFk-bZ-Nc8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Save to Parse Here" id="WWX-AZ-yDw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfd-l9-7yV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460" y="-63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pnl-A6-5Zk">
