@@ -45,7 +45,7 @@
 - (id)initWithText:(NSString *)text textAlignment:(NSTextAlignment)textAlignment fontSize:(float)fontSize labelEstimatedWidth:(float)labelEstimatedWidth afterUILabel:(UILabel *)label
 {
     CGRect tempFrame = CGRectMake(0, 0, labelEstimatedWidth, 1024.0);
-    UIFont *tempFont = [UIFont fontWithName:@"Cochin" size:fontSize];
+    UIFont *tempFont = [UIFont fontWithName:@"Cardo-Regular" size:fontSize];
     self = [self initWithFrame:tempFrame font:tempFont text:text textAlignment:textAlignment];
     if (self) {
         [self afterUILabel:label];
@@ -56,7 +56,7 @@
 - (id)initWithText:(NSString *)text textAlignment:(NSTextAlignment)textAlignment fontSize:(float)fontSize labelEstimatedWidth:(float)labelEstimatedWidth afterFrame:(CGRect)referenceFrame
 {
     CGRect tempFrame = CGRectMake(0, 0, labelEstimatedWidth, 1024.0);
-    UIFont *tempFont = [UIFont fontWithName:@"Cochin" size:fontSize];
+    UIFont *tempFont = [UIFont fontWithName:@"Cardo-Regular" size:fontSize];
     self = [self initWithFrame:tempFrame font:tempFont text:text textAlignment:textAlignment];
     if (self) {
         [self afterFrame:referenceFrame];
@@ -100,10 +100,10 @@
 {
     CGRect tempFrame = self.frame;
     if (self.textAlignment == NSTextAlignmentLeft || self.textAlignment == NSTextAlignmentCenter) {
-        self.frame = CGRectMake(CGRectGetMinX(referenceFrame), CGRectGetMaxY(referenceFrame)+5, CGRectGetWidth(tempFrame), CGRectGetHeight(tempFrame));
+        self.frame = CGRectMake(CGRectGetMinX(referenceFrame), CGRectGetMaxY(referenceFrame), CGRectGetWidth(tempFrame), CGRectGetHeight(tempFrame));
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
-        self.frame = CGRectMake(CGRectGetMinX(referenceFrame)+CGRectGetWidth(referenceFrame)-CGRectGetWidth(tempFrame), CGRectGetMaxY(referenceFrame)+5, CGRectGetWidth(tempFrame), CGRectGetHeight(tempFrame));
+        self.frame = CGRectMake(CGRectGetMinX(referenceFrame)+CGRectGetWidth(referenceFrame)-CGRectGetWidth(tempFrame), CGRectGetMaxY(referenceFrame), CGRectGetWidth(tempFrame), CGRectGetHeight(tempFrame));
     }
 }
 

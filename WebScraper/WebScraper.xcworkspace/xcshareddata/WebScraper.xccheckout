@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>779A951F-1BC1-47AB-BA23-A4D192C5E2B3</string>
+	<string>019BD0A0-0C9C-4FCE-93E6-2ECF4A1F04C4</string>
 	<key>IDESourceControlProjectName</key>
 	<string>WebScraper</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>38B30962-F91A-4FD4-A7FA-16B9F7CFC875</key>
+		<key>D73F2D99-6423-41A6-AB10-3A39FF9D7916</key>
 		<string>https://github.com/yiqin/Prototyping.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>WebScraper/WebScraper.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>38B30962-F91A-4FD4-A7FA-16B9F7CFC875</key>
+		<key>D73F2D99-6423-41A6-AB10-3A39FF9D7916</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>38B30962-F91A-4FD4-A7FA-16B9F7CFC875</string>
+	<string>D73F2D99-6423-41A6-AB10-3A39FF9D7916</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>38B30962-F91A-4FD4-A7FA-16B9F7CFC875</string>
+			<string>D73F2D99-6423-41A6-AB10-3A39FF9D7916</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Prototyping</string>
 		</dict>

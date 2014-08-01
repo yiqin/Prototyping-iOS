@@ -67,7 +67,7 @@
 - (void)displayDataFromKimono
 {
     self.kimonoResultsHeader = [self.kimonoResults objectForKey:@"Header"];
-    self.kimonoResultsBody = [self.kimonoResults objectForKey:@"Body"];
+    self.kimonoResultsBody = [self.kimonoResults objectForKey:@"collection2"];
     
     [self displayHeader];
     
@@ -108,8 +108,9 @@
 
 - (void)displayBody
 {
+    
     for (NSDictionary *tempBody in self.kimonoResultsBody) {
-        NSDictionary *temp = [tempBody objectForKey:@"Article"];
+        NSDictionary *temp = [tempBody objectForKey:@"property1"];
         NSString *bodyText = [temp objectForKey:@"text"];
         
         if ([bodyText length] > 0) {

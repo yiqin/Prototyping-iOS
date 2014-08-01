@@ -22,6 +22,8 @@
 		8D8612E0198977FB00EC2BC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D8612DE198977FB00EC2BC1 /* InfoPlist.strings */; };
 		8D8612E2198977FB00EC2BC1 /* WebScraperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8612E1198977FB00EC2BC1 /* WebScraperTests.m */; };
 		8D8612ED198982F800EC2BC1 /* YQLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8612EC198982F800EC2BC1 /* YQLabel.m */; };
+		8DCA84F6198B2A6100E91602 /* Cardo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA84F5198B29C900E91602 /* Cardo-Italic.ttf */; };
+		8DCA84F8198B2ADA00E91602 /* Cardo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA84F7198B2ABA00E91602 /* Cardo-Regular.ttf */; };
 		B164A7FC94BD42AAAD3D65CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAEA216DF3E45EABDBC428D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		8D8612E1198977FB00EC2BC1 /* WebScraperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebScraperTests.m; sourceTree = "<group>"; };
 		8D8612EB198982F800EC2BC1 /* YQLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLabel.h; sourceTree = "<group>"; };
 		8D8612EC198982F800EC2BC1 /* YQLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLabel.m; sourceTree = "<group>"; };
+		8DCA84F5198B29C900E91602 /* Cardo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cardo-Italic.ttf"; sourceTree = "<group>"; };
+		8DCA84F7198B2ABA00E91602 /* Cardo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cardo-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 		8D8612BD198977FB00EC2BC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8DCA84F5198B29C900E91602 /* Cardo-Italic.ttf */,
+				8DCA84F7198B2ABA00E91602 /* Cardo-Regular.ttf */,
 				8D8612BE198977FB00EC2BC1 /* WebScraper-Info.plist */,
 				8D8612BF198977FB00EC2BC1 /* InfoPlist.strings */,
 				8D8612C2198977FB00EC2BC1 /* main.m */,
@@ -243,6 +249,8 @@
 			files = (
 				8D8612CF198977FB00EC2BC1 /* Images.xcassets in Resources */,
 				8D8612C1198977FB00EC2BC1 /* InfoPlist.strings in Resources */,
+				8DCA84F8198B2ADA00E91602 /* Cardo-Regular.ttf in Resources */,
+				8DCA84F6198B2A6100E91602 /* Cardo-Italic.ttf in Resources */,
 				8D8612CA198977FB00EC2BC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +435,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebScraper/WebScraper-Prefix.pch";
 				INFOPLIST_FILE = "WebScraper/WebScraper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -441,7 +451,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebScraper/WebScraper-Prefix.pch";
 				INFOPLIST_FILE = "WebScraper/WebScraper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
