@@ -15,6 +15,8 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) UIScrollView *scrollView;
+
 @property (strong, nonatomic) NSDictionary *kimonoResults;
 @property (strong, nonatomic) NSArray *kimonoResultsHeader;
 @property (strong, nonatomic) NSArray *kimonoResultsBody;
@@ -34,6 +36,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.scrollView setContentSize:CGSizeMake(self.scrollView.bounds.size.width, self.scrollView.bounds.size.height*3)];
+    [self.view addSubview:self.scrollView];
+    
     [self loadDataFromKimono];
 }
 
@@ -101,9 +108,9 @@
                                                labelEstimatedWidth:CGRectGetWidth(self.view.frame)
                                                       afterUILabel:self.articleAuthor];
     
-    [self.view addSubview:self.articleTitle];
-    [self.view addSubview:self.articleAuthor];
-    [self.view addSubview:self.publishDate];
+    [self.scrollView addSubview:self.articleTitle];
+    [self.scrollView addSubview:self.articleAuthor];
+    [self.scrollView addSubview:self.publishDate];
 }
 
 - (void)displayBody
@@ -129,7 +136,7 @@
         }
         
         self.lastBodyLabel = self.currentBodyLabel;
-        [self.view addSubview:self.currentBodyLabel];
+        [self.scrollView addSubview:self.currentBodyLabel];
     }
 }
 
