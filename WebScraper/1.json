@@ -1,0 +1,109 @@
+{
+  "collection1": [
+    {
+      "property1": "CHINESE APPETIZERS"
+    }
+  ],
+  "collection2": [
+    {
+      "property2": "Ox Tongue and Tripe with Chili Sauce",
+      "property3": "$8.95"
+    },
+    {
+      "property2": "Steamed White Meat Chicken with Chili Oil Sauce",
+      "property3": "$6.95"
+    },
+    {
+      "property2": "Roast Beef",
+      "property3": "$8.95"
+    },
+    {
+      "property2": "Spicy & Hot Beef",
+      "property3": "$8.95"
+    },
+    {
+      "property2": "Chicken Feet w. Pickled Pepper",
+      "property3": "$8.95"
+    },
+    {
+      "property2": "Sichuan Style Cucumber",
+      "property3": "$4.95"
+    },
+    {
+      "property2": "Sichuan Dandan Noodles",
+      "property3": "$4.95"
+    },
+    {
+      "property2": "Wonton Soup",
+      "property3": "$5.95"
+    },
+    {
+      "property2": "Cucumber & Chinese Dip",
+      "property3": "$5.95"
+    },
+    {
+      "property2": "Scallion Pan Fried Cakes",
+      "property3": "$4.95"
+    },
+    {
+      "property2": "Spicy & Hot Pork Kidney",
+      "property3": "$7.95"
+    },
+    {
+      "property2": "Sichuan Pepper with Shredded Tripe",
+      "property3": "$6.95"
+    },
+    {
+      "property2": "Cold Mushrooms w. Hot Chili Sauce",
+      "property3": "$8.95"
+    },
+    {
+      "property2": "Sliced Boiled Pork with Garlic Sauce",
+      "property3": "$6.95"
+    },
+    {
+      "property2": "String Bean w. Garlic Sauce",
+      "property3": "$5.95"
+    },
+    {
+      "property2": "Cold Egg Plant w. Hot Chili Sauce",
+      "property3": "$5.95"
+    },
+    {
+      "property2": "Cold String Potato w. Hot Chili",
+      "property3": "$5.95"
+    },
+    {
+      "property2": "Snails w. Hot Chili Sauce",
+      "property3": "$15.95"
+    },
+    {
+      "property2": "Fried Chicken Wings",
+      "property3": "$8.95"
+    },
+    {
+      "property2": "Sichuan Bean Noodle Salad",
+      "property3": "$4.95"
+    },
+    {
+      "property2": "Three Ingredient Potstickers",
+      "property3": "$8.95"
+    },
+    {
+      "property2": "Vegetable Dumpling",
+      "property3": "$4.50"
+    },
+    {
+      "property2": "Potstickers",
+      "property3": "$4.95"
+    },
+    {
+      "property2": "Sumai",
+      "property3": "$6.95"
+    },
+    {
+      "property2": "Shanghainese Spring Rolls(2)",
+      "property3": "$3.95"
+    }
+  ]
+}

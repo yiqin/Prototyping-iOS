@@ -41,7 +41,12 @@
     self.categoriesDictionary = [[NSMutableDictionary alloc] init];
     
     // [self loadDataFromKimono];
-    [self directlyJSON];
+    // [self directlyJSON];
+    
+    
+    [self directlyJSON3];
+    
+    
 }
 
 - (void)loadDataFromKimono
@@ -99,7 +104,7 @@
 -(void)directlyJSON
 {
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"dish" ofType:@"json"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
@@ -150,6 +155,7 @@
 
     }
 }
+
 - (IBAction)finishedCategories:(id)sender {
     
     for (id key in self.categoriesDictionary) {
@@ -164,6 +170,135 @@
         }];
     }
 }
+
+
+-(void)directlyJSON2
+{
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    NSDictionary *temp1 = json ;
+    
+    NSArray *tempCollection1 = [temp1 objectForKey:@"collection1"];
+    
+    NSDictionary *tempCategory = [tempCollection1 objectAtIndex:0];
+    
+    
+    self.kimonoResultsCollection1 = [temp1 objectForKey:@"collection2"];
+    
+    for (NSDictionary *tempBody in self.kimonoResultsCollection1) {
+        NSString *property2 = [tempBody objectForKey:@"property2"];
+        NSString *property3 = [tempBody objectForKey:@"property3"];
+        
+        NSString *name = property2;
+        NSString *category = [[tempCategory objectForKey:@"property1"] lowercaseString];
+        NSString *price = [property3 substringFromIndex:1];
+        
+        PFObject *newDish = [PFObject objectWithClassName:@"DishesIN"];
+        
+        newDish[@"category"] = category;
+        
+        
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber * myNumberPrice = [f numberFromString:price];
+        NSArray *dishArrayKeys = [NSArray arrayWithObjects:@"nameChinese", @"name", @"price", nil];
+        NSArray *dishArrayObjects = [NSArray arrayWithObjects:@"", name, myNumberPrice, nil];
+        
+        NSDictionary *dishDictionaryInput = [NSDictionary dictionaryWithObjects:dishArrayObjects forKeys:dishArrayKeys];
+        NSString *dishDictionaryInputString = [dishDictionaryInput DictionaryToJSONString];
+        
+        newDish[@"dish"] = dishDictionaryInputString;
+        newDish[@"orderCount"] = @0;
+        
+        [newDish saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                
+            }
+        }];
+        
+        
+    }
+}
+
+
+
+
+
+
+//
+-(void)directlyJSON3
+{
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"2" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    NSDictionary *temp1 = json ;
+    
+    NSArray *tempCollection1 = [temp1 objectForKey:@"collection1"];
+    
+    // Dictionary
+    NSArray *tempCollection2 = [temp1 objectForKey:@"collection2"];
+    
+    
+    NSDictionary *collection2 = [tempCollection2 objectAtIndex:0];
+    
+    int numberArray = [tempCollection1 count];
+    
+    NSString *tempCategory = @"Soup";
+    
+    
+    for (int i= 0; i < numberArray-1; i++ ) {
+        NSString *category = [tempCategory lowercaseString];
+
+        
+        NSDictionary *property1 = [tempCollection1 objectAtIndex:i];
+        NSString *name = [[property1 objectForKey:@"property1"] objectForKey:@"text"];
+        
+        
+        NSString *tempKey = [NSString stringWithFormat:@"property%i", i+2];
+        
+        NSString *tempPrice = [collection2 objectForKey:tempKey];
+        
+        NSString *price = [tempPrice substringFromIndex:1];
+        
+        PFObject *newDish = [PFObject objectWithClassName:@"DishesIN"];
+        
+        newDish[@"category"] = category;
+        
+        
+        if (![self.categoriesDictionary objectForKey:category]) {
+            [self.categoriesDictionary setValue:@1 forKey:category];
+        }
+        
+        
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber * myNumberPrice = [f numberFromString:price];
+        NSArray *dishArrayKeys = [NSArray arrayWithObjects:@"nameChinese", @"name", @"price", nil];
+        NSArray *dishArrayObjects = [NSArray arrayWithObjects:@"", name, myNumberPrice, nil];
+        
+        NSDictionary *dishDictionaryInput = [NSDictionary dictionaryWithObjects:dishArrayObjects forKeys:dishArrayKeys];
+        NSString *dishDictionaryInputString = [dishDictionaryInput DictionaryToJSONString];
+        
+        newDish[@"dish"] = dishDictionaryInputString;
+        newDish[@"orderCount"] = @0;
+        
+        [newDish saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                
+            }
+        }];
+        
+        
+    }
+}
+
+
 
 
 - (void)didReceiveMemoryWarning
