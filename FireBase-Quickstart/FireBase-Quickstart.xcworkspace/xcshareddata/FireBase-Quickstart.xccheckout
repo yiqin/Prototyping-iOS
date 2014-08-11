@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6C754B99-63DF-4314-AE9C-4ACEAB0F244B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FireBase-Quickstart</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>741E3E24-5416-459F-ACC9-36430F9E5D1F</key>
+		<string>https://github.com/yiqin/Prototyping-Objective-C.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FireBase-Quickstart/FireBase-Quickstart.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>741E3E24-5416-459F-ACC9-36430F9E5D1F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yiqin/Prototyping-Objective-C.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>741E3E24-5416-459F-ACC9-36430F9E5D1F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>741E3E24-5416-459F-ACC9-36430F9E5D1F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Prototyping-Objective-C</string>
+		</dict>
+	</array>
+</dict>
+</plist>
