@@ -56,6 +56,20 @@
     
     
     
+    // Get a reference to our posts
+    Firebase* postsRef = [[Firebase alloc] initWithUrl: @"https://quickstart.firebaseio.com/users/gracehop/"];
+    
+    // Attach a block to read the data at our posts reference
+    [postsRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@", snapshot.value);
+        NSDictionary *readData = snapshot.value;
+        
+        NSLog(@"%@", [readData objectForKey:@"full_name"]);
+        
+        
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
     
     
     
