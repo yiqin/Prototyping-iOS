@@ -26,4 +26,11 @@ Start to learn FireBase.
 
 ![Alt text](/FireBase-Quickstart/ScreenShot.png "Optional Title")
 
+
+Working with Block
+===========
+Blocks are also used for callbacks, defining the code to be executed when a task completes.
+
+
+
 Let me know if you have any questions. Thanks
