@@ -10,6 +10,6 @@
 
 @interface Task : NSObject
 
-+ (void)beginTaskWithInput1:(NSString *)input1 input2:(NSString *)input2 callbackBlock:(void (^)(NSString *str, NSString *error))callbackBlock;
++ (void)beginTaskWithInput1:(NSString *)input1 input2:(NSString *)input2 callbackBlock:(void (^)(NSString *str))callbackBlock fail:(void (^)(NSString *error))errorBlock;
 
 @end

@@ -21,10 +21,8 @@ dispatch_queue_t queueTask;
     return self;
 }
 
-// blocks are a type of callback and could be considered a form of delegation limited to the method or function.
-+ (void)beginTaskWithInput1:(NSString *)input1 input2:(NSString *)input2 callbackBlock:(void (^)(NSString *str, NSString *error))callbackBlock
++ (void)beginTaskWithInput1:(NSString *)input1 input2:(NSString *)input2 callbackBlock:(void (^)(NSString *str))callbackBlock fail:(void (^)(NSString *error))errorBlock
 {
-    
     NSLog(@"Input1 %@", input1);
     NSLog(@"Input2 %@", input2);
     
@@ -39,9 +37,10 @@ dispatch_queue_t queueTask;
         
         NSLog(@"First Finish");
         
-        callbackBlock(@"Hello world",@"Great");
+        callbackBlock(@"Hello world");
+        
     });
-
+    
     
     dispatch_async(queueTask, ^{
         NSLog(@"Second Dispatch Async");
@@ -51,9 +50,11 @@ dispatch_queue_t queueTask;
         sleep((x % 4) + 5);
         
         NSLog(@"Second Finish");
+        errorBlock(@"Someting wrong");
     });
     
     NSLog(@"The end");
 }
+
 
 @end

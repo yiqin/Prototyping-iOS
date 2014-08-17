@@ -61,7 +61,6 @@ typedef int (^MathBlock)(int, int);
     // Call block
     NSLog(@"Math Block: %i", self.mathBlock(1,2));
     
-    
     /*
     dispatch_async(queue, ^{
         [self.task beginTaskWithCallbackBlock:^{
@@ -73,9 +72,12 @@ typedef int (^MathBlock)(int, int);
     NSLog(@"Tap the button");
     
     // Class method now
-    [Task beginTaskWithInput1:@"aaaaaaaaaaaaaa" input2:@"bbbbbbbbbbbbbb" callbackBlock:^(NSString *str, NSString *error) {
-        NSLog(@"The block is finished: %@ + %@", str, error);
+    [Task beginTaskWithInput1:@"aaaaaaaaaaaaaa" input2:@"bbbbbbbbbbbbbb" callbackBlock:^(NSString *str) {
+        NSLog(@"Successful block is finished: %@", str);
+    } fail:^(NSString *error) {
+        NSLog(@"Failed block is finished: %@", error);
     }];
+    
     
     NSLog(@"Button is the end");
 }
