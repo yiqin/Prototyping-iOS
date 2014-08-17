@@ -10,6 +10,6 @@
 
 @interface Task : NSObject
 
-- (void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock;
++ (void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock;
 
 @end

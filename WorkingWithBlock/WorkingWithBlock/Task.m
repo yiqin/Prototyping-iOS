@@ -10,17 +10,32 @@
 
 @implementation Task
 
+dispatch_queue_t queueTask;
 
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        queueTask = dispatch_queue_create("com.test",nil);
+    }
+    return self;
+}
 
-
--(void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock
++(void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock
 {
     NSLog(@"In the block");
-
-    uint32_t x=arc4random();
-    sleep((x % 4) + 2);
     
-    callbackBlock();
+    dispatch_async(queueTask, ^{
+        NSLog(@"Dispatch Async");
+        
+        // A delay
+        uint32_t x=arc4random();
+        sleep((x % 4) + 2);
+        
+        callbackBlock();
+    });
+    
+    NSLog(@"The end");
 }
 
 @end
