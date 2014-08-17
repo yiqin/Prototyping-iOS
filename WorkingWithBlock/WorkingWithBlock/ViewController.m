@@ -29,10 +29,7 @@ typedef int (^MathBlock)(int, int);
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self doMathWithBlock:^int(int a, int b) {
-        return a + b;
-    }];
-    
+    [self initBlock];
     self.task = [[Task alloc] init];
     
     // queue = dispatch_queue_create("com.adamburkepile.queue",nil);
@@ -42,6 +39,15 @@ typedef int (^MathBlock)(int, int);
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initBlock
+{
+    [self doMathWithBlock:^int(int a, int b) {
+        return a + b;
+    }];
+    
+    
 }
 
 - (void)doMathWithBlock:(MathBlock) mathBlock
@@ -67,12 +73,11 @@ typedef int (^MathBlock)(int, int);
     NSLog(@"Tap the button");
     
     // Class method now
-    [Task beginTaskWithCallbackBlock:^{
-        NSLog(@"The block finished");
+    [Task beginTaskWithInput1:@"aaaaaaaaaaaaaa" input2:@"bbbbbbbbbbbbbb" callbackBlock:^(NSString *str, NSString *error) {
+        NSLog(@"The block is finished: %@ + %@", str, error);
     }];
     
-    NSLog(@"The end");
-    
+    NSLog(@"Button is the end");
 }
 
 - (IBAction)clickedAddButton:(id)sender
