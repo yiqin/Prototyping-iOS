@@ -30,7 +30,8 @@ Start to learn FireBase.
 Working with Block
 ===========
 Blocks are also used for callbacks, defining the code to be executed when a task completes.
-
+Inspired by the tutorial on RayWenderlich
+http://www.raywenderlich.com/9438/how-to-use-blocks-in-ios-5-tutorial-part-2
 
 
 Let me know if you have any questions. Thanks
