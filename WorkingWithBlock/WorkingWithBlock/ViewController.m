@@ -11,6 +11,10 @@
 
 @interface ViewController ()
 
+// This part is confusing.
+typedef int (^MathBlock)(int, int);
+
+@property (strong) MathBlock mathBlock;
 @property (strong, nonatomic) Task *task;
 
 @end
@@ -19,10 +23,15 @@
 
 // dispatch_queue_t queue;
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self doMathWithBlock:^int(int a, int b) {
+        return a + b;
+    }];
     
     self.task = [[Task alloc] init];
     
@@ -35,8 +44,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)doMathWithBlock:(MathBlock) mathBlock
+{
+    // Since a block is just an Objective-C object, you can store it in a property so you can call it later.
+    self.mathBlock = mathBlock;
+}
+
 - (IBAction)clickedButton:(id)sender
 {
+    // Call block
+    NSLog(@"Math Block: %i", self.mathBlock(1,2));
+    
+    
     /*
     dispatch_async(queue, ^{
         [self.task beginTaskWithCallbackBlock:^{
@@ -66,9 +85,6 @@
     int resultFromBlock = add(2,2);
     
     NSLog(@"%i", resultFromBlock);
-    
-    
-    
 }
 
 
