@@ -44,13 +44,16 @@
     
     // Kimono
     // 1 - Blue Apron
-    NSURL *url1 = [NSURL URLWithString:@"https://www.kimonolabs.com/api/7uqn1y8g?apikey=8541e9ff8ff5291b4d84b9f75550c9b8"];
+    NSURL *url1 = [NSURL URLWithString:@"https://www.kimonolabs.com/kimonoapis/7uqn1y8g?apikey=8541e9ff8ff5291b4d84b9f75550c9b8"];
     NSURLRequest *request1 = [NSURLRequest requestWithURL:url1];
     AFHTTPRequestOperation *operation1 = [[AFHTTPRequestOperation alloc] initWithRequest:request1];
     
     operation1.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation1 setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Blue Apron - JSON: %@", [responseObject objectForKey:@"results"]);
+        
+        
+        NSLog(@"Retrieve an API: %@", responseObject);
+        // NSLog(@"Blue Apron - JSON: %@", [responseObject objectForKey:@"results"]);
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -81,7 +84,7 @@
     // operation1 is finished first, since operation2 and operation1 are scheduled at the same time.
     
     // [myOperationManager.operationQueue addOperation:operation2];
-    // [myOperationManager.operationQueue addOperation:operation1];
+    [myOperationManager.operationQueue addOperation:operation1];
     
     
     // Follow the order in the mutableOperations

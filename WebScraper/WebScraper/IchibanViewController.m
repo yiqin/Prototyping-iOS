@@ -83,7 +83,6 @@
     [operationManager.operationQueue addOperation:operation];
     
     
-    operationManager Put
 }
 
 
