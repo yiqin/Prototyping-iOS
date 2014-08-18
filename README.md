@@ -33,5 +33,6 @@ Blocks are also used for callbacks, defining the code to be executed when a task
 Inspired by the tutorial on RayWenderlich
 http://www.raywenderlich.com/9438/how-to-use-blocks-in-ios-5-tutorial-part-2
 
+NOTE: Blocks are Objective-C objects, which means they can be added to collections like NSArray or NSDictionary. They also have the ability to capture values from the enclosing scope, making them similar to closures or lambdas in other programming languages.
 
 Let me know if you have any questions. Thanks
