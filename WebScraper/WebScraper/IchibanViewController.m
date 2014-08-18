@@ -40,11 +40,11 @@
     
     self.categoriesDictionary = [[NSMutableDictionary alloc] init];
     
-    // [self loadDataFromKimono];
+    [self loadDataFromKimono];
     // [self directlyJSON];
     
     
-    [self directlyJSON3];
+    // [self directlyJSON3];
     
     
 }
@@ -62,6 +62,10 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    
+    
+    // what is this?
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         self.kimonoResults = [responseObject objectForKey:@"results"];
@@ -77,6 +81,9 @@
     AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManager alloc] init];
     operationManager.operationQueue.maxConcurrentOperationCount = 5;
     [operationManager.operationQueue addOperation:operation];
+    
+    
+    operationManager Put
 }
 
 

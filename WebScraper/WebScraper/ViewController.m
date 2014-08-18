@@ -62,6 +62,8 @@
         [self displayDataFromKimono];
         [spinner stopAnimating];
         
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     
     }];
