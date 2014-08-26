@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  SampleAFNetworking
+//  SampleYQNetworking
 //
 //  Created by yiqin on 7/20/14.
 //  Copyright (c) 2014 yipick. All rights reserved.
@@ -12,7 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Override point for customization YQter application launch.
     return YES;
 }
 							

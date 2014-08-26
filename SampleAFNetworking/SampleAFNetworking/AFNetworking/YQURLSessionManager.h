@@ -1,6 +1,6 @@
-// AFURLSessionManager.h
+// YQURLSessionManager.h
 // 
-// Copyright (c) 2013-2014 AFNetworking (http://afnetworking.com)
+// Copyright (c) 2013-2014 YQNetworking (http://YQnetworking.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,21 +22,21 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AFURLResponseSerialization.h"
-#import "AFURLRequestSerialization.h"
-#import "AFSecurityPolicy.h"
-#import "AFNetworkReachabilityManager.h"
+#import "YQURLResponseSerialization.h"
+#import "YQURLRequestSerialization.h"
+#import "YQSecurityPolicy.h"
+#import "YQNetworkReachabilityManager.h"
 
 /**
- `AFURLSessionManager` creates and manages an `NSURLSession` object based on a specified `NSURLSessionConfiguration` object, which conforms to `<NSURLSessionTaskDelegate>`, `<NSURLSessionDataDelegate>`, `<NSURLSessionDownloadDelegate>`, and `<NSURLSessionDelegate>`.
+ `YQURLSessionManager` creates and manages an `NSURLSession` object based on a specified `NSURLSessionConfiguration` object, which conforms to `<NSURLSessionTaskDelegate>`, `<NSURLSessionDataDelegate>`, `<NSURLSessionDownloadDelegate>`, and `<NSURLSessionDelegate>`.
  
  ## Subclassing Notes
  
- This is the base class for `AFHTTPSessionManager`, which adds functionality specific to making HTTP requests. If you are looking to extend `AFURLSessionManager` specifically for HTTP, consider subclassing `AFHTTPSessionManager` instead.
+ This is the base class for `YQHTTPSessionManager`, which adds functionality specific to making HTTP requests. If you are looking to extend `YQURLSessionManager` specifically for HTTP, consider subclassing `YQHTTPSessionManager` instead.
  
  ## NSURLSession & NSURLSessionTask Delegate Methods
  
- `AFURLSessionManager` implements the following delegate methods:
+ `YQURLSessionManager` implements the following delegate methods:
  
  ### `NSURLSessionDelegate`
  
@@ -68,7 +68,7 @@
  
  ## Network Reachability Monitoring
 
- Network reachability status and change monitoring is available through the `reachabilityManager` property. Applications may choose to monitor network reachability conditions in order to prevent or suspend any outbound requests. See `AFNetworkReachabilityManager` for more details.
+ Network reachability status and change monitoring is available through the `reachabilityManager` property. Applications may choose to monitor network reachability conditions in order to prevent or suspend any outbound requests. See `YQNetworkReachabilityManager` for more details.
  
  ## NSCoding Caveats
  
@@ -82,7 +82,7 @@
 
 #if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
 
-@interface AFURLSessionManager : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSSecureCoding, NSCopying>
+@interface YQURLSessionManager : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSSecureCoding, NSCopying>
 
 /**
  The managed session.
@@ -95,29 +95,29 @@
 @property (readonly, nonatomic, strong) NSOperationQueue *operationQueue;
 
 /**
- Responses sent from the server in data tasks created with `dataTaskWithRequest:success:failure:` and run using the `GET` / `POST` / et al. convenience methods are automatically validated and serialized by the response serializer. By default, this property is set to an instance of `AFJSONResponseSerializer`.
+ Responses sent from the server in data tasks created with `dataTaskWithRequest:success:failure:` and run using the `GET` / `POST` / et al. convenience methods are automatically validated and serialized by the response serializer. By default, this property is set to an instance of `YQJSONResponseSerializer`.
 
  @warning `responseSerializer` must not be `nil`.
  */
-@property (nonatomic, strong) id <AFURLResponseSerialization> responseSerializer;
+@property (nonatomic, strong) id <YQURLResponseSerialization> responseSerializer;
 
 ///-------------------------------
 /// @name Managing Security Policy
 ///-------------------------------
 
 /**
- The security policy used by created request operations to evaluate server trust for secure connections. `AFURLSessionManager` uses the `defaultPolicy` unless otherwise specified.
+ The security policy used by created request operations to evaluate server trust for secure connections. `YQURLSessionManager` uses the `defaultPolicy` unless otherwise specified.
  */
-@property (nonatomic, strong) AFSecurityPolicy *securityPolicy;
+@property (nonatomic, strong) YQSecurityPolicy *securityPolicy;
 
 ///--------------------------------------
 /// @name Monitoring Network Reachability
 ///--------------------------------------
 
 /**
- The network reachability manager. `AFURLSessionManager` uses the `sharedManager` by default.
+ The network reachability manager. `YQURLSessionManager` uses the `sharedManager` by default.
  */
-@property (readwrite, nonatomic, strong) AFNetworkReachabilityManager *reachabilityManager;
+@property (readwrite, nonatomic, strong) YQNetworkReachabilityManager *reachabilityManager;
 
 ///----------------------------
 /// @name Getting Session Tasks
@@ -164,9 +164,9 @@
 /**
  Whether to attempt to retry creation of upload tasks for background sessions when initial call returns `nil`. `NO` by default.
 
- @bug As of iOS 7.0, there is a bug where upload tasks created for background tasks are sometimes `nil`. As a workaround, if this property is `YES`, AFNetworking will follow Apple's recommendation to try creating the task again.
+ @bug As of iOS 7.0, there is a bug where upload tasks created for background tasks are sometimes `nil`. As a workaround, if this property is `YES`, YQNetworking will follow Apple's recommendation to try creating the task again.
 
- @see https://github.com/AFNetworking/AFNetworking/issues/1675
+ @see https://github.com/YQNetworking/YQNetworking/issues/1675
  */
 @property (nonatomic, assign) BOOL attemptsToRecreateUploadTasksForBackgroundSessions;
 
@@ -255,7 +255,7 @@
 
  @param request The HTTP request for the request.
  @param progress A progress object monitoring the current download progress.
- @param destination A block object to be executed in order to determine the destination of the downloaded file. This block takes two arguments, the target path & the server response, and returns the desired file URL of the resulting download. The temporary file used during the download will be automatically deleted after being moved to the returned URL.
+ @param destination A block object to be executed in order to determine the destination of the downloaded file. This block takes two arguments, the target path & the server response, and returns the desired file URL of the resulting download. The temporary file used during the download will be automatically deleted YQter being moved to the returned URL.
  @param completionHandler A block to be executed when a task finishes. This block has no return value and takes three arguments: the server response, the path of the downloaded file, and the error describing the network or parsing error that occurred, if any.
  
  @warning If using a background `NSURLSessionConfiguration` on iOS, these blocks will be lost when the app is terminated. Background sessions may prefer to use `-setDownloadTaskDidFinishDownloadingBlock:` to specify the URL for saving the downloaded file, rather than the destination block of this method.
@@ -270,7 +270,7 @@
 
  @param resumeData The data used to resume downloading.
  @param progress A progress object monitoring the current download progress.
- @param destination A block object to be executed in order to determine the destination of the downloaded file. This block takes two arguments, the target path & the server response, and returns the desired file URL of the resulting download. The temporary file used during the download will be automatically deleted after being moved to the returned URL.
+ @param destination A block object to be executed in order to determine the destination of the downloaded file. This block takes two arguments, the target path & the server response, and returns the desired file URL of the resulting download. The temporary file used during the download will be automatically deleted YQter being moved to the returned URL.
  @param completionHandler A block to be executed when a task finishes. This block has no return value and takes three arguments: the server response, the path of the downloaded file, and the error describing the network or parsing error that occurred, if any.
  */
 - (NSURLSessionDownloadTask *)downloadTaskWithResumeData:(NSData *)resumeData
@@ -403,7 +403,7 @@
 /**
  Sets a block to be executed when a download task has completed a download, as handled by the `NSURLSessionDownloadDelegate` method `URLSession:downloadTask:didFinishDownloadingToURL:`.
  
- @param block A block object to be executed when a download task has completed. The block returns the URL the download should be moved to, and takes three arguments: the session, the download task, and the temporary location of the downloaded file. If the file manager encounters an error while attempting to move the temporary file to the destination, an `AFURLSessionDownloadTaskDidFailToMoveFileNotification` will be posted, with the download task as its object, and the user info of the error.
+ @param block A block object to be executed when a download task has completed. The block returns the URL the download should be moved to, and takes three arguments: the session, the download task, and the temporary location of the downloaded file. If the file manager encounters an error while attempting to move the temporary file to the destination, an `YQURLSessionDownloadTaskDidFailToMoveFileNotification` will be posted, with the download task as its object, and the user info of the error.
  */
 - (void)setDownloadTaskDidFinishDownloadingBlock:(NSURL * (^)(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, NSURL *location))block;
 
@@ -432,98 +432,98 @@
 /**
  Posted when a task begins executing.
  
- @deprecated Use `AFNetworkingTaskDidResumeNotification` instead.
+ @deprecated Use `YQNetworkingTaskDidResumeNotification` instead.
  */
-extern NSString * const AFNetworkingTaskDidStartNotification DEPRECATED_ATTRIBUTE;
+extern NSString * const YQNetworkingTaskDidStartNotification DEPRECATED_ATTRIBUTE;
 
 /**
  Posted when a task resumes.
  */
-extern NSString * const AFNetworkingTaskDidResumeNotification;
+extern NSString * const YQNetworkingTaskDidResumeNotification;
 
 /**
  Posted when a task finishes executing. Includes a userInfo dictionary with additional information about the task.
  
- @deprecated Use `AFNetworkingTaskDidCompleteNotification` instead.
+ @deprecated Use `YQNetworkingTaskDidCompleteNotification` instead.
  */
-extern NSString * const AFNetworkingTaskDidFinishNotification DEPRECATED_ATTRIBUTE;
+extern NSString * const YQNetworkingTaskDidFinishNotification DEPRECATED_ATTRIBUTE;
 
 /**
  Posted when a task finishes executing. Includes a userInfo dictionary with additional information about the task.
  */
-extern NSString * const AFNetworkingTaskDidCompleteNotification;
+extern NSString * const YQNetworkingTaskDidCompleteNotification;
 
 /**
  Posted when a task suspends its execution.
  */
-extern NSString * const AFNetworkingTaskDidSuspendNotification;
+extern NSString * const YQNetworkingTaskDidSuspendNotification;
 
 /**
  Posted when a session is invalidated.
  */
-extern NSString * const AFURLSessionDidInvalidateNotification;
+extern NSString * const YQURLSessionDidInvalidateNotification;
 
 /**
  Posted when a session download task encountered an error when moving the temporary download file to a specified destination.
  */
-extern NSString * const AFURLSessionDownloadTaskDidFailToMoveFileNotification;
+extern NSString * const YQURLSessionDownloadTaskDidFailToMoveFileNotification;
 
 /**
- The raw response data of the task. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if response data exists for the task.
+ The raw response data of the task. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if response data exists for the task.
  
- @deprecated Use `AFNetworkingTaskDidCompleteResponseDataKey` instead.
+ @deprecated Use `YQNetworkingTaskDidCompleteResponseDataKey` instead.
  */
-extern NSString * const AFNetworkingTaskDidFinishResponseDataKey DEPRECATED_ATTRIBUTE;
+extern NSString * const YQNetworkingTaskDidFinishResponseDataKey DEPRECATED_ATTRIBUTE;
 
 /**
- The raw response data of the task. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if response data exists for the task.
+ The raw response data of the task. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if response data exists for the task.
  */
-extern NSString * const AFNetworkingTaskDidCompleteResponseDataKey;
+extern NSString * const YQNetworkingTaskDidCompleteResponseDataKey;
 
 /**
- The serialized response object of the task. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if the response was serialized.
+ The serialized response object of the task. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if the response was serialized.
  
- @deprecated Use `AFNetworkingTaskDidCompleteSerializedResponseKey` instead.
+ @deprecated Use `YQNetworkingTaskDidCompleteSerializedResponseKey` instead.
  */
-extern NSString * const AFNetworkingTaskDidFinishSerializedResponseKey DEPRECATED_ATTRIBUTE;
+extern NSString * const YQNetworkingTaskDidFinishSerializedResponseKey DEPRECATED_ATTRIBUTE;
 
 /**
- The serialized response object of the task. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if the response was serialized.
+ The serialized response object of the task. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if the response was serialized.
  */
-extern NSString * const AFNetworkingTaskDidCompleteSerializedResponseKey;
+extern NSString * const YQNetworkingTaskDidCompleteSerializedResponseKey;
 
 /**
- The response serializer used to serialize the response. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if the task has an associated response serializer.
+ The response serializer used to serialize the response. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if the task has an associated response serializer.
  
- @deprecated Use `AFNetworkingTaskDidCompleteResponseSerializerKey` instead.
+ @deprecated Use `YQNetworkingTaskDidCompleteResponseSerializerKey` instead.
  */
-extern NSString * const AFNetworkingTaskDidFinishResponseSerializerKey DEPRECATED_ATTRIBUTE;
+extern NSString * const YQNetworkingTaskDidFinishResponseSerializerKey DEPRECATED_ATTRIBUTE;
 
 /**
- The response serializer used to serialize the response. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if the task has an associated response serializer.
+ The response serializer used to serialize the response. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if the task has an associated response serializer.
  */
-extern NSString * const AFNetworkingTaskDidCompleteResponseSerializerKey;
+extern NSString * const YQNetworkingTaskDidCompleteResponseSerializerKey;
 
 /**
- The file path associated with the download task. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if an the response data has been stored directly to disk.
+ The file path associated with the download task. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if an the response data has been stored directly to disk.
  
- @deprecated Use `AFNetworkingTaskDidCompleteAssetPathKey` instead.
+ @deprecated Use `YQNetworkingTaskDidCompleteAssetPathKey` instead.
  */
-extern NSString * const AFNetworkingTaskDidFinishAssetPathKey DEPRECATED_ATTRIBUTE;
+extern NSString * const YQNetworkingTaskDidFinishAssetPathKey DEPRECATED_ATTRIBUTE;
 
 /**
- The file path associated with the download task. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if an the response data has been stored directly to disk.
+ The file path associated with the download task. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if an the response data has been stored directly to disk.
  */
-extern NSString * const AFNetworkingTaskDidCompleteAssetPathKey;
+extern NSString * const YQNetworkingTaskDidCompleteAssetPathKey;
 
 /**
- Any error associated with the task, or the serialization of the response. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if an error exists.
+ Any error associated with the task, or the serialization of the response. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if an error exists.
  
- @deprecated Use `AFNetworkingTaskDidCompleteErrorKey` instead.
+ @deprecated Use `YQNetworkingTaskDidCompleteErrorKey` instead.
  */
-extern NSString * const AFNetworkingTaskDidFinishErrorKey DEPRECATED_ATTRIBUTE;
+extern NSString * const YQNetworkingTaskDidFinishErrorKey DEPRECATED_ATTRIBUTE;
 
 /**
- Any error associated with the task, or the serialization of the response. Included in the userInfo dictionary of the `AFNetworkingTaskDidFinishNotification` if an error exists.
+ Any error associated with the task, or the serialization of the response. Included in the userInfo dictionary of the `YQNetworkingTaskDidFinishNotification` if an error exists.
  */
-extern NSString * const AFNetworkingTaskDidCompleteErrorKey;
+extern NSString * const YQNetworkingTaskDidCompleteErrorKey;

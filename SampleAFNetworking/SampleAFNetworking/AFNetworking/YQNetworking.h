@@ -1,6 +1,6 @@
-// AFNetworking.h
+// YQNetworking.h
 //
-// Copyright (c) 2013 AFNetworking (http://afnetworking.com/)
+// Copyright (c) 2013 YQNetworking (http://YQnetworking.com/)
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,22 +23,22 @@
 #import <Foundation/Foundation.h>
 #import <Availability.h>
 
-#ifndef _AFNETWORKING_
-    #define _AFNETWORKING_
+#ifndef _YQNETWORKING_
+    #define _YQNETWORKING_
 
-    #import "AFURLRequestSerialization.h"
-    #import "AFURLResponseSerialization.h"
-    #import "AFSecurityPolicy.h"
-    #import "AFNetworkReachabilityManager.h"
+    #import "YQURLRequestSerialization.h"
+    #import "YQURLResponseSerialization.h"
+    #import "YQSecurityPolicy.h"
+    #import "YQNetworkReachabilityManager.h"
 
-    #import "AFURLConnectionOperation.h"
-    #import "AFHTTPRequestOperation.h"
-    #import "AFHTTPRequestOperationManager.h"
+    #import "YQURLConnectionOperation.h"
+    #import "YQHTTPRequestOperation.h"
+    #import "YQHTTPRequestOperationManager.h"
 
 #if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
       ( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
-    #import "AFURLSessionManager.h"
-    #import "AFHTTPSessionManager.h"
+    #import "YQURLSessionManager.h"
+    #import "YQHTTPSessionManager.h"
 #endif
 
-#endif /* _AFNETWORKING_ */
+#endif /* _YQNETWORKING_ */

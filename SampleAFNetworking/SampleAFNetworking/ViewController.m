@@ -1,14 +1,14 @@
 //
 //  ViewController.m
-//  SampleAFNetworking
+//  SampleYQNetworking
 //
 //  Created by yiqin on 7/20/14.
 //  Copyright (c) 2014 yipick. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "AFHTTPRequestOperation.h"
-#import "AFHTTPRequestOperationManager.h"
+#import "YQHTTPRequestOperation.h"
+#import "YQHTTPRequestOperationManager.h"
 
 @interface ViewController ()
 
@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup YQter loading the view, typically from a nib.
     
     
     
@@ -36,46 +36,46 @@
     
     
     
-    // AFNetWorking
-    // https://github.com/AFNetworking/AFNetworking/wiki/AFNetworking-2.0-Migration-Guide#afhttprequestoperation-example
-    // AFHTTPRequestOperation  - GET Method
-    // Other methods - "GET, POST, PUT, DELETE", use AFHTTPRequestOperationManager
+    // YQNetWorking
+    // https://github.com/YQNetworking/YQNetworking/wiki/YQNetworking-2.0-Migration-Guide#YQhttprequestoperation-example
+    // YQHTTPRequestOperation  - GET Method
+    // Other methods - "GET, POST, PUT, DELETE", use YQHTTPRequestOperationManager
     
     
     // Kimono
     // 1 - Blue Apron
     NSURL *url1 = [NSURL URLWithString:@"https://www.kimonolabs.com/kimonoapis/7uqn1y8g?apikey=8541e9ff8ff5291b4d84b9f75550c9b8"];
     NSURLRequest *request1 = [NSURLRequest requestWithURL:url1];
-    AFHTTPRequestOperation *operation1 = [[AFHTTPRequestOperation alloc] initWithRequest:request1];
+    YQHTTPRequestOperation *operation1 = [[YQHTTPRequestOperation alloc] initWithRequest:request1];
     
-    operation1.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operation1 setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    operation1.responseSerializer = [YQJSONResponseSerializer serializer];
+    [operation1 setCompletionBlockWithSuccess:^(YQHTTPRequestOperation *operation, id responseObject) {
         
         
         NSLog(@"Retrieve an API: %@", responseObject);
         // NSLog(@"Blue Apron - JSON: %@", [responseObject objectForKey:@"results"]);
         
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(YQHTTPRequestOperation *operation, NSError *error) {
         // Handle error
     }];
     
     
     // 2 - Product Hunt
-    NSURL *url2 = [NSURL URLWithString:@"https://www.kimonolabs.com/api/afhn5y42?apikey=8541e9ff8ff5291b4d84b9f75550c9b8"];
+    NSURL *url2 = [NSURL URLWithString:@"https://www.kimonolabs.com/api/YQhn5y42?apikey=8541e9ff8ff5291b4d84b9f75550c9b8"];
     NSURLRequest *request2 = [NSURLRequest requestWithURL:url2];
-    AFHTTPRequestOperation *operation2 = [[AFHTTPRequestOperation alloc] initWithRequest:request2];
+    YQHTTPRequestOperation *operation2 = [[YQHTTPRequestOperation alloc] initWithRequest:request2];
     
-    operation2.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operation2 setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    operation2.responseSerializer = [YQJSONResponseSerializer serializer];
+    [operation2 setCompletionBlockWithSuccess:^(YQHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Product Hunt - JSON: %@", [responseObject objectForKey:@"results"]);
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(YQHTTPRequestOperation *operation, NSError *error) {
         // Handle error
     }];
     
     
-    AFHTTPRequestOperationManager *myOperationManager = [[AFHTTPRequestOperationManager alloc] init];
+    YQHTTPRequestOperationManager *myOperationManager = [[YQHTTPRequestOperationManager alloc] init];
     myOperationManager.operationQueue.maxConcurrentOperationCount = 5;
     // It makes sense now.
     // Set maxConcurrentOperationCount to 1
@@ -97,17 +97,17 @@
     
     // YO Demo
     NSString *path1 = @"http://api.justyo.co/yoall/";
-    NSDictionary *parameters1 = @{@"api_token": @"20af1dd2-93af-869f-446c-0675f8694095"};
+    NSDictionary *parameters1 = @{@"api_token": @"20YQ1dd2-93YQ-869f-446c-0675f8694095"};
     
-	AFHTTPRequestOperationManager *operationManager1 = [AFHTTPRequestOperationManager manager];
-	operationManager1.requestSerializer = [AFJSONRequestSerializer serializer];
-    operationManager1.responseSerializer = [AFHTTPResponseSerializer serializer];
+	YQHTTPRequestOperationManager *operationManager1 = [YQHTTPRequestOperationManager manager];
+	operationManager1.requestSerializer = [YQJSONRequestSerializer serializer];
+    operationManager1.responseSerializer = [YQHTTPResponseSerializer serializer];
     
     /*
-    [operationManager1 POST:path1 parameters:parameters1 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [operationManager1 POST:path1 parameters:parameters1 success:^(YQHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"YOOOOOOO SUCCESS");
 	
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(YQHTTPRequestOperation *operation, NSError *error) {
 		NSLog(@"FAILED");
 		
     }];
@@ -133,17 +133,17 @@
     
     
     
-	AFHTTPRequestOperationManager *operationManager2 = [AFHTTPRequestOperationManager manager];
-	operationManager2.requestSerializer = [AFJSONRequestSerializer serializer];
-    operationManager2.responseSerializer = [AFJSONResponseSerializer serializer];
+	YQHTTPRequestOperationManager *operationManager2 = [YQHTTPRequestOperationManager manager];
+	operationManager2.requestSerializer = [YQJSONRequestSerializer serializer];
+    operationManager2.responseSerializer = [YQJSONResponseSerializer serializer];
     
-    [operationManager2 POST:path2 parameters:parameters2 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [operationManager2 POST:path2 parameters:parameters2 success:^(YQHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"SUCCESS - JSON: %@", responseObject);
         
         // if success, try another url and get it.
         [self getKimono];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(YQHTTPRequestOperation *operation, NSError *error) {
 		NSLog(@"FAILED: %@", error);
 		
     }];
@@ -159,16 +159,16 @@
 {
     NSString *path = @"https://www.kimonolabs.com/api/2wwctra6?apikey=8541e9ff8ff5291b4d84b9f75550c9b8";
     
-    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-	operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
-    operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    YQHTTPRequestOperationManager *operationManager = [YQHTTPRequestOperationManager manager];
+	operationManager.requestSerializer = [YQJSONRequestSerializer serializer];
+    operationManager.responseSerializer = [YQJSONResponseSerializer serializer];
     
-    [operationManager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [operationManager GET:path parameters:nil success:^(YQHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"SUCCESS - JSON: %@", responseObject);
         
         // if success, try another url
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(YQHTTPRequestOperation *operation, NSError *error) {
 		NSLog(@"FAILED: %@", error);
 		
     }];

@@ -1,6 +1,6 @@
-// AFSerialization.h
+// YQSerialization.h
 //
-// Copyright (c) 2013-2014 AFNetworking (http://afnetworking.com)
+// Copyright (c) 2013-2014 YQNetworking (http://YQnetworking.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,11 +24,11 @@
 #import <CoreGraphics/CoreGraphics.h>
 
 /**
- The `AFURLResponseSerialization` protocol is adopted by an object that decodes data into a more useful object representation, according to details in the server response. Response serializers may additionally perform validation on the incoming response and data.
+ The `YQURLResponseSerialization` protocol is adopted by an object that decodes data into a more useful object representation, according to details in the server response. Response serializers may additionally perform validation on the incoming response and data.
 
  For example, a JSON response serializer may check for an acceptable status code (`2XX` range) and content type (`application/json`), decoding a valid JSON response into an object.
  */
-@protocol AFURLResponseSerialization <NSObject, NSSecureCoding, NSCopying>
+@protocol YQURLResponseSerialization <NSObject, NSSecureCoding, NSCopying>
 
 /**
  The response object decoded from the data associated with a specified response.
@@ -48,11 +48,11 @@
 #pragma mark -
 
 /**
- `AFHTTPResponseSerializer` conforms to the `AFURLRequestSerialization` & `AFURLResponseSerialization` protocols, offering a concrete base implementation of query string / URL form-encoded parameter serialization and default request headers, as well as response status code and content type validation.
+ `YQHTTPResponseSerializer` conforms to the `YQURLRequestSerialization` & `YQURLResponseSerialization` protocols, offering a concrete base implementation of query string / URL form-encoded parameter serialization and default request headers, as well as response status code and content type validation.
 
- Any request or response serializer dealing with HTTP is encouraged to subclass `AFHTTPResponseSerializer` in order to ensure consistent default behavior.
+ Any request or response serializer dealing with HTTP is encouraged to subclass `YQHTTPResponseSerializer` in order to ensure consistent default behavior.
  */
-@interface AFHTTPResponseSerializer : NSObject <AFURLResponseSerialization>
+@interface YQHTTPResponseSerializer : NSObject <YQURLResponseSerialization>
 
 /**
  The string encoding used to serialize parameters.
@@ -101,15 +101,15 @@
 
 
 /**
- `AFJSONResponseSerializer` is a subclass of `AFHTTPResponseSerializer` that validates and decodes JSON responses.
+ `YQJSONResponseSerializer` is a subclass of `YQHTTPResponseSerializer` that validates and decodes JSON responses.
 
- By default, `AFJSONResponseSerializer` accepts the following MIME types, which includes the official standard, `application/json`, as well as other commonly-used types:
+ By default, `YQJSONResponseSerializer` accepts the following MIME types, which includes the official standard, `application/json`, as well as other commonly-used types:
 
  - `application/json`
  - `text/json`
  - `text/javascript`
  */
-@interface AFJSONResponseSerializer : AFHTTPResponseSerializer
+@interface YQJSONResponseSerializer : YQHTTPResponseSerializer
 
 /**
  Options for reading the response JSON data and creating the Foundation objects. For possible values, see the `NSJSONSerialization` documentation section "NSJSONReadingOptions". `0` by default.
@@ -133,14 +133,14 @@
 #pragma mark -
 
 /**
- `AFXMLParserSerializer` is a subclass of `AFHTTPResponseSerializer` that validates and decodes XML responses as an `NSXMLParser` objects.
+ `YQXMLParserSerializer` is a subclass of `YQHTTPResponseSerializer` that validates and decodes XML responses as an `NSXMLParser` objects.
 
- By default, `AFXMLParserSerializer` accepts the following MIME types, which includes the official standard, `application/xml`, as well as other commonly-used types:
+ By default, `YQXMLParserSerializer` accepts the following MIME types, which includes the official standard, `application/xml`, as well as other commonly-used types:
 
  - `application/xml`
  - `text/xml`
  */
-@interface AFXMLParserResponseSerializer : AFHTTPResponseSerializer
+@interface YQXMLParserResponseSerializer : YQHTTPResponseSerializer
 
 @end
 
@@ -149,14 +149,14 @@
 #ifdef __MAC_OS_X_VERSION_MIN_REQUIRED
 
 /**
- `AFXMLDocumentSerializer` is a subclass of `AFHTTPResponseSerializer` that validates and decodes XML responses as an `NSXMLDocument` objects.
+ `YQXMLDocumentSerializer` is a subclass of `YQHTTPResponseSerializer` that validates and decodes XML responses as an `NSXMLDocument` objects.
 
- By default, `AFXMLDocumentSerializer` accepts the following MIME types, which includes the official standard, `application/xml`, as well as other commonly-used types:
+ By default, `YQXMLDocumentSerializer` accepts the following MIME types, which includes the official standard, `application/xml`, as well as other commonly-used types:
 
  - `application/xml`
  - `text/xml`
  */
-@interface AFXMLDocumentResponseSerializer : AFHTTPResponseSerializer
+@interface YQXMLDocumentResponseSerializer : YQHTTPResponseSerializer
 
 /**
  Input and output options specifically intended for `NSXMLDocument` objects. For possible values, see the `NSJSONSerialization` documentation section "NSJSONReadingOptions". `0` by default.
@@ -177,13 +177,13 @@
 #pragma mark -
 
 /**
- `AFPropertyListSerializer` is a subclass of `AFHTTPResponseSerializer` that validates and decodes XML responses as an `NSXMLDocument` objects.
+ `YQPropertyListSerializer` is a subclass of `YQHTTPResponseSerializer` that validates and decodes XML responses as an `NSXMLDocument` objects.
 
- By default, `AFPropertyListSerializer` accepts the following MIME types:
+ By default, `YQPropertyListSerializer` accepts the following MIME types:
 
  - `application/x-plist`
  */
-@interface AFPropertyListResponseSerializer : AFHTTPResponseSerializer
+@interface YQPropertyListResponseSerializer : YQHTTPResponseSerializer
 
 /**
  The property list format. Possible values are described in "NSPropertyListFormat".
@@ -209,9 +209,9 @@
 #pragma mark -
 
 /**
- `AFImageSerializer` is a subclass of `AFHTTPResponseSerializer` that validates and decodes image responses.
+ `YQImageSerializer` is a subclass of `YQHTTPResponseSerializer` that validates and decodes image responses.
 
- By default, `AFImageSerializer` accepts the following MIME types, which correspond to the image formats supported by UIImage or NSImage:
+ By default, `YQImageSerializer` accepts the following MIME types, which correspond to the image formats supported by UIImage or NSImage:
 
  - `image/tiff`
  - `image/jpeg`
@@ -224,7 +224,7 @@
  - `image/x-xbitmap`
  - `image/x-win-bitmap`
  */
-@interface AFImageResponseSerializer : AFHTTPResponseSerializer
+@interface YQImageResponseSerializer : YQHTTPResponseSerializer
 
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 /**
@@ -243,9 +243,9 @@
 #pragma mark -
 
 /**
- `AFCompoundSerializer` is a subclass of `AFHTTPResponseSerializer` that delegates the response serialization to the first `AFHTTPResponseSerializer` object that returns an object for `responseObjectForResponse:data:error:`, falling back on the default behavior of `AFHTTPResponseSerializer`. This is useful for supporting multiple potential types and structures of server responses with a single serializer.
+ `YQCompoundSerializer` is a subclass of `YQHTTPResponseSerializer` that delegates the response serialization to the first `YQHTTPResponseSerializer` object that returns an object for `responseObjectForResponse:data:error:`, falling back on the default behavior of `YQHTTPResponseSerializer`. This is useful for supporting multiple potential types and structures of server responses with a single serializer.
  */
-@interface AFCompoundResponseSerializer : AFHTTPResponseSerializer
+@interface YQCompoundResponseSerializer : YQHTTPResponseSerializer
 
 /**
  The component response serializers.
@@ -255,7 +255,7 @@
 /**
  Creates and returns a compound serializer comprised of the specified response serializers.
 
- @warning Each response serializer specified must be a subclass of `AFHTTPResponseSerializer`, and response to `-validateResponse:data:error:`.
+ @warning Each response serializer specified must be a subclass of `YQHTTPResponseSerializer`, and response to `-validateResponse:data:error:`.
  */
 + (instancetype)compoundSerializerWithResponseSerializers:(NSArray *)responseSerializers;
 
@@ -270,25 +270,25 @@
 
  The following error domain is predefined.
 
- - `NSString * const AFURLResponseSerializationErrorDomain`
+ - `NSString * const YQURLResponseSerializationErrorDomain`
 
  ### Constants
 
- `AFURLResponseSerializationErrorDomain`
- AFURLResponseSerializer errors. Error codes for `AFURLResponseSerializationErrorDomain` correspond to codes in `NSURLErrorDomain`.
+ `YQURLResponseSerializationErrorDomain`
+ YQURLResponseSerializer errors. Error codes for `YQURLResponseSerializationErrorDomain` correspond to codes in `NSURLErrorDomain`.
  */
-extern NSString * const AFURLResponseSerializationErrorDomain;
+extern NSString * const YQURLResponseSerializationErrorDomain;
 
 /**
  ## User info dictionary keys
 
  These keys may exist in the user info dictionary, in addition to those defined for NSError.
 
- - `NSString * const AFNetworkingOperationFailingURLResponseErrorKey`
+ - `NSString * const YQNetworkingOperationFailingURLResponseErrorKey`
 
  ### Constants
 
- `AFNetworkingOperationFailingURLResponseErrorKey`
- The corresponding value is an `NSURLResponse` containing the response of the operation associated with an error. This key is only present in the `AFURLResponseSerializationErrorDomain`.
+ `YQNetworkingOperationFailingURLResponseErrorKey`
+ The corresponding value is an `NSURLResponse` containing the response of the operation associated with an error. This key is only present in the `YQURLResponseSerializationErrorDomain`.
  */
-extern NSString * const AFNetworkingOperationFailingURLResponseErrorKey;
+extern NSString * const YQNetworkingOperationFailingURLResponseErrorKey;

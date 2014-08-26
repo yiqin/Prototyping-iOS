@@ -1,6 +1,6 @@
 //
-//  SampleAFNetworkingTests.m
-//  SampleAFNetworkingTests
+//  SampleYQNetworkingTests.m
+//  SampleYQNetworkingTests
 //
 //  Created by yiqin on 7/20/14.
 //  Copyright (c) 2014 yipick. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface SampleAFNetworkingTests : XCTestCase
+@interface SampleYQNetworkingTests : XCTestCase
 
 @end
 
-@implementation SampleAFNetworkingTests
+@implementation SampleYQNetworkingTests
 
 - (void)setUp
 {
@@ -22,7 +22,7 @@
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    // Put teardown code here. This method is called YQter the invocation of each test method in the class.
     [super tearDown];
 }
 
