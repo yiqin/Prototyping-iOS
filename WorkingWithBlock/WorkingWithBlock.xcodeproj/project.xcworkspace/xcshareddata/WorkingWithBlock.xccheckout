@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B1AC6485-7814-4178-BFD6-10C3B2F9812B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WorkingWithBlock</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FBB9F514-719F-4801-AFD3-7DC85198AF86</key>
+		<string>https://github.com/yiqin/Prototyping-Objective-C.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WorkingWithBlock/WorkingWithBlock.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FBB9F514-719F-4801-AFD3-7DC85198AF86</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yiqin/Prototyping-Objective-C.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FBB9F514-719F-4801-AFD3-7DC85198AF86</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FBB9F514-719F-4801-AFD3-7DC85198AF86</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Prototyping-Objective-C</string>
+		</dict>
+	</array>
+</dict>
+</plist>
