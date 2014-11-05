@@ -35,4 +35,23 @@ http://www.raywenderlich.com/9438/how-to-use-blocks-in-ios-5-tutorial-part-2
 
 NOTE: Blocks are Objective-C objects, which means they can be added to collections like NSArray or NSDictionary. They also have the ability to capture values from the enclosing scope, making them similar to closures or lambdas in other programming languages.
 
+
+SkyLab, a A/B testing library
+===========
+```objective-C
+// So-called A&B Testing
+// If the test is not reset, A/B testing won't change.
+SkyLab.abTestWithName("SLAdPosition", a: { () -> Void in
+    println("SLAdPosition: a test")
+    self.articleDetailBodyTVC.adPosition = 2;
+
+}, b: { () -> Void in
+    println("SLAdPosition: b test")
+    self.articleDetailBodyTVC.adPosition = 3;
+})
+SkyLab.resetTestNamed("SLAdPosition")
+```
+
+
+
 Let me know if you have any questions. Thanks
